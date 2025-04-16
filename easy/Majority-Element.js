@@ -28,6 +28,21 @@ const majorityElement = function(nums) {
         }
     }
 };
+const majorityElement2 = function(nums) {
+    let res = 0
+    let majority = 0
+    for (let num of nums) {
+        if (majority === 0){
+            res = num
+        }
+        if (num === res) {
+            majority += 1
+        } else {
+            majority -= 1
+        }
+    }
+    return res
+};
 
-console.log(majorityElement([3,2,3]))
-console.log(majorityElement([2,2,1,1,1,2,2]))
+console.log(majorityElement2([3,2,3]))
+console.log(majorityElement2([2,2,1,1,1,2,2]))
