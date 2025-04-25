@@ -38,7 +38,21 @@ const missingNumber = function(nums) {
     return res
 };
 
-console.log(missingNumber([2,0,1]))
+const missingNumber2 = function(nums) {
+    const n = nums.length;
+    let ans = 0;
+    for (let i = 1; i <= n; i++) {
+        ans ^= i;
+    }
+    for (let i = 0; i < nums.length; i++) {
+        ans ^= nums[i];
+    }
+    return ans;
+};
+
+
+
+console.log(missingNumber2([2,0,1]))
 console.log(missingNumber([0,1]))
 console.log(missingNumber([0]))
 console.log(missingNumber([9,6,4,2,3,5,7,0,1]))
