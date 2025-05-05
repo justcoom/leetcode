@@ -14,26 +14,15 @@
 // Output: false
 
 const isSubsequence = function(s, t) {
-    let count = 0
-
-    for (let i = 0; i < s.length; i++) {
-        let first = s[i]
-
-        for (let j = i; j < t.length; j++) {
-            // let second = t[j]
-
-            if (first === t[j]) {
-                first = s[i + 1]
-                j = t[j + 1]
-                count++
-                break
-            }
+    let counter = 0
+    for (let i = 0; i < t.length; i++) {
+        if (s[counter] === t[i]) {
+            counter++
         }
     }
-
-    return count === s.length
+    return counter === s.length
 };
 
-// console.log(isSubsequence('abc', 'ahbgdc'))
-// console.log(isSubsequence("axc", "ahbgdc"))
+console.log(isSubsequence('abc', 'ahbgdc'))
+console.log(isSubsequence("axc", "ahbgdcx"))
 console.log(isSubsequence("bb", "ahbgdc")) // false
